@@ -11,13 +11,13 @@ public class FichierMediateur extends Mediator {
 	public String[] listNotificationInterests() {
 		String[] result = new String[1];
 		result[0]="FICHIER_LU";
-		 
 		return result;
 	}
 	
 	@Override
 	public void handleNotification(INotification notification) {
 		List<String> list = (List) notification.getBody();
+		
 	for (String element : list) {
 		System.out.println(element);
 	}

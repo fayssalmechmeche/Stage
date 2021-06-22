@@ -19,7 +19,7 @@ public class URLProxy extends Proxy {
 
 	// mettre du code ici
 	public  void getCode(String url){
-		
+		   List<String> list = new ArrayList();
 	       String code = "";
 	       
 	        if(urlExists(url))
@@ -42,7 +42,9 @@ public class URLProxy extends Proxy {
 	                }
 	                catch (IOException ex)
 	                {
-	                    System.out.println("Erreur dans l'ouverture de l'URL : " + ex);
+	                    
+	                    list.add("Erreur dans l'ouverture de l'URL : " + ex);
+	                    
 	                }
 	                finally
 	                {
@@ -52,17 +54,18 @@ public class URLProxy extends Proxy {
 	                    }
 	                    catch (IOException ex)
 	                    {
-	                        System.out.println("Erreur dans la fermeture du buffer : " + ex);
+	                        
+	                        list.add("Erreur dans la fermeture du buffer : " + ex);
 	                    }
 	                }
 	        }
 	        else
 	        {
-	           System.out.println("Le site n'existe pas !");
+	           list.add("\"Le site n'existe pas !\"");
 	        }
-	        List<String> list = new ArrayList();
-	        list.add(code);
-	       sendNotification("FICHIER_LU",list);
+	        
+	       list.add(code);
+	       sendNotification("FICHIER_LU",list); 
 	       
 	    }
 	public static boolean urlExists(String url)
