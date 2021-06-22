@@ -16,7 +16,7 @@ public class FichierMediateur extends Mediator {
 	
 	
 	@Override
-	public void onRegister() {
+	public void onRegister() { // la methode donnait ça dans le fichier Mediator : " Called by the View when the Mediator is registered" 
 		// TODO Auto-generated method stub
 		super.onRegister();
 		Scanner saisieUtilisateur = new Scanner(System.in);
