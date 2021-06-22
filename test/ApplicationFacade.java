@@ -3,6 +3,8 @@ package test;
 import java.util.Scanner;
 import java.util.function.Supplier;
 
+import javax.management.Notification;
+
 import org.puremvc.java.interfaces.ICommand;
 import org.puremvc.java.patterns.facade.Facade;
 import org.puremvc.java.patterns.mediator.Mediator;
@@ -13,6 +15,8 @@ import test.model.FichierProxy;
 import test.model.URLProxy;
 
 public class ApplicationFacade extends Facade {
+	
+	
 	private static ApplicationFacade facade;
 	 static ApplicationFacade getInstance() {
 		 if (facade == null ) {
@@ -20,12 +24,12 @@ public class ApplicationFacade extends Facade {
 		 }
 		 return facade;
 		 
-		 
 	 }
 	 @Override
 	protected void initializeFacade() {
 		// TODO Auto-generated method stub
 		super.initializeFacade();
+		
 	}
 	 
 	 
@@ -51,16 +55,10 @@ public class ApplicationFacade extends Facade {
 	protected void initializeView() {
 		// TODO Auto-generated method stub
 		super.initializeView();
-		this.registerMediator(new FichierMediateur());
-		Scanner saisieUtilisateur = new Scanner(System.in);
-		System.out.println("Veuillez saisir un url :");
-		String url = saisieUtilisateur.next();
-		sendNotification("LIRE_FICHIER",url,"url"); // voir ça 
-		sendNotification("LIRE_FICHIER","files/momo/test.txt","texte");
+		this.registerMediator(new FichierMediateur());		
 		
-		
-		
+		}
 		
 	}
 
-}
+
