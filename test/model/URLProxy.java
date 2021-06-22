@@ -64,7 +64,7 @@ public class URLProxy extends Proxy {
 	           list.add("\"Le site n'existe pas !\"");
 	        }
 	        
-	       list.add(code);
+	       list.add(code);  
 	       sendNotification("FICHIER_LU",list); 
 	       
 	    }

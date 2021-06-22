@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import org.puremvc.java.interfaces.ICommand;
 import org.puremvc.java.patterns.facade.Facade;
+import org.puremvc.java.patterns.mediator.Mediator;
 
 import test.controller.LireFichierCommand;
 import test.mediateur.FichierMediateur;
@@ -25,13 +26,9 @@ public class ApplicationFacade extends Facade {
 	protected void initializeFacade() {
 		// TODO Auto-generated method stub
 		super.initializeFacade();
-		Scanner saisieUtilisateur = new Scanner(System.in);
-		System.out.println("Veuillez saisir un url :");
-		String url = saisieUtilisateur.next();
-		sendNotification("LIRE_FICHIER","files/momo/test.txt","texte");
-		sendNotification("LIRE_FICHIER",url,"url"); // voir ça 
-		
 	}
+	 
+	 
 	 @Override
 		protected void initializeController() {
 			// TODO Auto-generated method stub
@@ -39,6 +36,8 @@ public class ApplicationFacade extends Facade {
 			Supplier<ICommand> supplier = ()-> new LireFichierCommand();
 			this.registerCommand("LIRE_FICHIER", supplier );
 		}
+	 
+	 
 	 
 	 @Override
 	protected void initializeModel() {
@@ -53,6 +52,15 @@ public class ApplicationFacade extends Facade {
 		// TODO Auto-generated method stub
 		super.initializeView();
 		this.registerMediator(new FichierMediateur());
+		Scanner saisieUtilisateur = new Scanner(System.in);
+		System.out.println("Veuillez saisir un url :");
+		String url = saisieUtilisateur.next();
+		sendNotification("LIRE_FICHIER",url,"url"); // voir ça 
+		sendNotification("LIRE_FICHIER","files/momo/test.txt","texte");
+		
+		
+		
+		
 	}
 
 }

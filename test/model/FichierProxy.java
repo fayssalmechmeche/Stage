@@ -12,10 +12,12 @@ import java.io.*;
 
 
 public class FichierProxy extends Proxy {
+	
 	String urlServeurDistant;
 	public FichierProxy() {
 		super("fichier_proxy");
 		urlServeurDistant = "toto";
+		
 	}
 	public void read(String fileName)  {
 		
