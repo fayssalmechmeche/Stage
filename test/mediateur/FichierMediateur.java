@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import org.json.JSONObject;
+import org.json.JSONException;
 import org.puremvc.java.interfaces.INotification;
 import org.puremvc.java.patterns.mediator.Mediator;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FichierMediateur extends Mediator {
 	public FichierMediateur() {
@@ -42,13 +46,15 @@ public class FichierMediateur extends Mediator {
 	@Override
 	public void handleNotification(INotification notification) {
 		
-		List<String> list = (List) notification.getBody();
+		ArrayList<String> list = (ArrayList) notification.getBody();
+		
 	for (String element : list) {
-		System.out.println(element);
+		System.out.println(element+"\n");
+		System.out.println("taille de la phrase");
+		System.out.println(element.length());
+		
 	}
 	
-	
-		
 	}
 
 }

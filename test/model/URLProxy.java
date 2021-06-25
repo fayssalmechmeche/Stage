@@ -8,7 +8,12 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.puremvc.java.patterns.proxy.Proxy;
+
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 public class URLProxy extends Proxy {
 	public URLProxy() {
@@ -19,7 +24,9 @@ public class URLProxy extends Proxy {
 
 	// mettre du code ici
 	public  void getCode(String url){
-		   List<String> list = new ArrayList();
+		   ArrayList<String> list = new ArrayList();
+		   
+		   
 	       String code = "";
 	       
 	        if(urlExists(url))
@@ -64,10 +71,11 @@ public class URLProxy extends Proxy {
 	           list.add("\"Le site n'existe pas !\"");
 	        }
 	        
-	       list.add(code);  
+	       list.add(code); 
 	       sendNotification("FICHIER_LU",list); 
-	       
+	       // https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT
 	    }
+	
 	public static boolean urlExists(String url)
 	   {
 	        try {

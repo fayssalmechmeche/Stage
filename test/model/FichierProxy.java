@@ -16,7 +16,7 @@ public class FichierProxy extends Proxy {
 	String urlServeurDistant;
 	public FichierProxy() {
 		super("fichier_proxy");
-		urlServeurDistant = "toto";
+		
 		
 	}
 	public void read(String fileName)  {
@@ -35,8 +35,6 @@ public class FichierProxy extends Proxy {
 		}
 	}
 	
-	public String getUrlServeurDistant() {
-		return this.urlServeurDistant;
-	}
+	
 
 }
