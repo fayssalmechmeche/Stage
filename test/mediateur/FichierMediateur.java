@@ -16,8 +16,8 @@ public class FichierMediateur extends Mediator {
 	
 	
 	@Override
-	public void onRegister() { // la methode donnait Ã§a dans le fichier Mediator : " Called by the View when the Mediator is registered" 
-		// TODO Auto-generated method stub
+	public void onRegister() { // la methode donnait ça dans le fichier Mediator : " Called by the View when the Mediator is registered" 
+		
 		super.onRegister();
 		Scanner saisieUtilisateur = new Scanner(System.in);
 		System.out.println("Veuillez saisir un url :");
