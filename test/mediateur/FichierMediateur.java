@@ -12,9 +12,11 @@ import org.puremvc.java.patterns.mediator.Mediator;
 
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import test.jsonToJava;
+import test.Json;
+
 
 public class FichierMediateur extends Mediator {
 	public FichierMediateur() {
@@ -55,11 +57,44 @@ public class FichierMediateur extends Mediator {
 		
 	for (String element : list) {
 		System.out.println(element+"\n");
-		ObjectMapper map = new ObjectMapper();
+		
 		
 		try {
-			jsonToJava json = map.readValue(element,jsonToJava.class);
-					System.out.println("code" + json.getCode() + "data : " + json.getData() + "currency : " + json.getCurrency() + "name : " + json.getName() + " full name : " + json.getFullName() + "precision : " + json.getPrecision() + "confirms : " + json.getConfirms() + "contractAddress : " + json.getContractAddress() + "withdrawalMinSize : " + json.getWithdrawalMinSize() + "withdrawalMinFee : " + json.getWithdrawalMinFee() + "isWithdrawEnabled : " + json.isWithdrawEnabled() + "isDepositEnabled" + json.isDepositEnabled() + " isMarginEnabled" + json.isMarginEnabled() + "isDebitEnabled" + json.isDebitEnabled() );
+			
+	        ObjectMapper mapper = new ObjectMapper();
+	        JsonNode node = mapper.readTree(element);
+            System.out.println("node"+node);
+            String code = node.get("code").asText();
+            System.out.println(code);
+            String currency = node.get("currency").asText();
+            System.out.println(currency);
+            String name = node.get("name").asText();
+            System.out.println(name);
+            String fullName = node.get("fullName").asText();
+            System.out.println(fullName);
+            String Bitcoin = node.get("Bitcoin").asText();
+            System.out.println(Bitcoin);
+            String precision = node.get("precision").asText();
+            System.out.println(precision);
+            String confirms = node.get("confirms").asText();
+            System.out.println(confirms);
+            String contractAddress = node.get("contractAddress").asText();
+            System.out.println(contractAddress);
+            String withdrawalMinSize = node.get("withdrawalMinSize").asText();
+            System.out.println(withdrawalMinSize);
+            String withdrawalMinFee = node.get("withdrawalMinFee").asText();
+            System.out.println(withdrawalMinFee);
+            String isWithdrawEnabled = node.get("isWithdrawEnabled").asText();
+            System.out.println(isWithdrawEnabled);
+            String isDepositEnabled = node.get("isDepositEnabled").asText();
+            System.out.println(isDepositEnabled);
+            String isMarginEnabled = node.get("isMarginEnabled").asText();
+            String isDebitEnabled = node.get("isDebitEnabled").asText();
+            System.out.println(isDebitEnabled);System.out.println(isMarginEnabled);
+            
+            
+          
+            
 			} catch (JsonParseException e) { // si je mettais pas ça j'avais une erreur 
 				
 				e.printStackTrace();
