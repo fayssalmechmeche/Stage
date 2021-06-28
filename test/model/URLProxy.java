@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.json.JSONObject;
+
 import org.puremvc.java.patterns.proxy.Proxy;
 
 import com.fasterxml.jackson.core.JsonParser;
@@ -73,7 +73,7 @@ public class URLProxy extends Proxy {
 	        
 	       list.add(code); 
 	       sendNotification("FICHIER_LU",list); 
-	       // https://api.kucoin.com/api/v1/market/stats?symbol=BTC-USDT
+	       //https://api.kucoin.com/api/v1/currencies/ETH
 	    }
 	
 	public static boolean urlExists(String url)
