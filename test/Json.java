@@ -7,166 +7,158 @@ import com.fasterxml.jackson.core.JsonParser;
 
 public class Json {
 	
-	private String code;
-	private String data;
-	private String name;
-	private String currency;
-	private String fullName;
-	private int precision;
-	private int confirms;
-	private String contractAddress;
-	private String withdrawalMinSize;
-	private String withdrawalMinFee;
-	private boolean isWithdrawEnabled;
-	private boolean isDebitEnabled;
-	private boolean isDepositEnabled;
-	private boolean isMarginEnabled;
+	private String statusCode;
+	private String statusMessage;
+	private String ipAddress;
+	private String countryCode;
+	private String countryName;
+	private String regionName;
+	private String cityName;
+	private String zipCode;
+	private String latitude;
+	private String longitude;
+	private String timeZone;
 	
 	
 	
-	public Json(String element) {
+	public Json() {
 		
 	}
+
+
+
+	public String getStatusCode() {
+		return statusCode;
+	}
+
+
+
+	public void setStatusCode(String statusCode) {
+		this.statusCode = statusCode;
+	}
+
+
+
+	public String getStatusMessage() {
+		return statusMessage;
+	}
+
+
+
+	public void setStatusMessage(String statusMessage) {
+		this.statusMessage = statusMessage;
+	}
+
+
+
+	public String getIpAddress() {
+		return ipAddress;
+	}
+
+
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
+
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+
+
+
+	public String getCountryName() {
+		return countryName;
+	}
+
+
+
+	public void setCountryName(String countryName) {
+		this.countryName = countryName;
+	}
+
+
+
+	public String getRegionName() {
+		return regionName;
+	}
+
+
+
+	public void setRegionName(String regionName) {
+		this.regionName = regionName;
+	}
+
+
+
+	public String getCityName() {
+		return cityName;
+	}
+
+
+
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+
+
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+
+
+	public String getLatitude() {
+		return latitude;
+	}
+
+
+
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+
+
+
+	public String getLongitude() {
+		return longitude;
+	}
+
+
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+
+
+	public String getTimeZone() {
+		return timeZone;
+	}
+
+
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+	}
 	
 	
-	public String getCode() {
-		return code;
-	}
-
-
-	public void setCode(String code) {
-		this.code = code;
-	}
-
-
-	public String getData() {
-		return data;
-	}
-
-
-	public void setData(String data) {
-		this.data = data;
-	}
-
-
-	public String getCurrency() {
-		return currency;
-	}
-
-
-	public void setCurrency(String currency) {
-		this.currency = currency;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getFullName() {
-		return fullName;
-	}
-
-
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-
-
-	public int getPrecision() {
-		return precision;
-	}
-
-
-	public void setPrecision(int precision) {
-		this.precision = precision;
-	}
-
-
-	public int getConfirms() {
-		return confirms;
-	}
-
-
-	public void setConfirms(int confirms) {
-		this.confirms = confirms;
-	}
-
-
-	public String getContractAddress() {
-		return contractAddress;
-	}
-
-
-	public void setContractAddress(String contractAddress) {
-		this.contractAddress = contractAddress;
-	}
-
-
-	public String getWithdrawalMinSize() {
-		return withdrawalMinSize;
-	}
-
-
-	public void setWithdrawalMinSize(String withdrawalMinSize) {
-		this.withdrawalMinSize = withdrawalMinSize;
-	}
-
-
-	public String getWithdrawalMinFee() {
-		return withdrawalMinFee;
-	}
-
-
-	public void setWithdrawalMinFee(String withdrawalMinFee) {
-		this.withdrawalMinFee = withdrawalMinFee;
-	}
-
-
-	public boolean isWithdrawEnabled() {
-		return isWithdrawEnabled;
-	}
-
-
-	public void setWithdrawEnabled(boolean isWithdrawEnabled) {
-		this.isWithdrawEnabled = isWithdrawEnabled;
-	}
-
-
-	public boolean isDebitEnabled() {
-		return isDebitEnabled;
-	}
-
-
-	public void setDebitEnabled(boolean isDebitEnabled) {
-		this.isDebitEnabled = isDebitEnabled;
-	}
-
-
-	public boolean isDepositEnabled() {
-		return isDepositEnabled;
-	}
-
-
-	public void setDepositEnabled(boolean isDepositEnabled) {
-		this.isDepositEnabled = isDepositEnabled;
-	}
-
-
-	public boolean isMarginEnabled() {
-		return isMarginEnabled;
-	}
-
-
-	public void setMarginEnabled(boolean isMarginEnabled) {
-		this.isMarginEnabled = isMarginEnabled;
-	}
+	
 
 
 	

@@ -7,13 +7,17 @@ import java.util.List;
 import java.util.Scanner;
 
 
+import org.json.JSONObject;
+import org.json.simple.JSONArray;
 import org.puremvc.java.interfaces.INotification;
 import org.puremvc.java.patterns.mediator.Mediator;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import test.Json;
 
@@ -61,58 +65,28 @@ public class FichierMediateur extends Mediator {
 		
 		try {
 			
-	        ObjectMapper mapper = new ObjectMapper();
-	        JsonNode node = mapper.readTree(element);
-            System.out.println("node"+node);
-            String code = node.get("code").asText();
-            System.out.println(code);
-            String currency = node.get("currency").asText();
-            System.out.println(currency);
-            String name = node.get("name").asText();
-            System.out.println(name);
-            String fullName = node.get("fullName").asText();
-            System.out.println(fullName);
-            String Bitcoin = node.get("Bitcoin").asText();
-            System.out.println(Bitcoin);
-            String precision = node.get("precision").asText();
-            System.out.println(precision);
-            String confirms = node.get("confirms").asText();
-            System.out.println(confirms);
-            String contractAddress = node.get("contractAddress").asText();
-            System.out.println(contractAddress);
-            String withdrawalMinSize = node.get("withdrawalMinSize").asText();
-            System.out.println(withdrawalMinSize);
-            String withdrawalMinFee = node.get("withdrawalMinFee").asText();
-            System.out.println(withdrawalMinFee);
-            String isWithdrawEnabled = node.get("isWithdrawEnabled").asText();
-            System.out.println(isWithdrawEnabled);
-            String isDepositEnabled = node.get("isDepositEnabled").asText();
-            System.out.println(isDepositEnabled);
-            String isMarginEnabled = node.get("isMarginEnabled").asText();
-            String isDebitEnabled = node.get("isDebitEnabled").asText();
-            System.out.println(isDebitEnabled);System.out.println(isMarginEnabled);
-            
-            
-          
-            
-			} catch (JsonParseException e) { // si je mettais pas ça j'avais une erreur 
-				
-				e.printStackTrace();
-			} catch (JsonMappingException e) {// si je mettais pas ça j'avais une erreur 
-				
-				e.printStackTrace();
-			} catch (IOException e) {// si je mettais pas ça j'avais une erreur 
-				
-				e.printStackTrace();
-			}
-		
+	        ObjectMapper obj_ObjectMapper = new ObjectMapper();
+	        Json json = new Json();
+	        json = obj_ObjectMapper.readValue(element, Json.class);
+	        
+	        System.out.println("statusCode-" + json.getStatusCode());
+	        System.out.println("statusMessage-" + json.getStatusMessage());
+	        System.out.println("ipAddress-" + json.getIpAddress());
+	        System.out.println("countryCode-" + json.getCountryCode());
+	        System.out.println("countryName-" + json.getCountryName());
+	        System.out.println("regionName-" + json.getRegionName());
+	        System.out.println("cityName-" + json.getCityName());
+	        System.out.println("zipCode-" + json.getZipCode());
+	        System.out.println("latitude-" + json.getLatitude());
+	        System.out.println("longitude-" + json.getLongitude());
+	        System.out.println("timeZone-" + json.getTimeZone());
+		}
+		catch(IOException e) {
+			
+		}
+	  
 	}
-	
-	
-	
-	
-	
-	
+	}
 	}
 
-}
+
