@@ -2,6 +2,10 @@ package test.mediateur;
 
 import java.io.EOFException;
 import java.io.IOException;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -62,26 +66,22 @@ public class FichierMediateur extends Mediator {
 	for (String element : list) {
 		System.out.println(element+"\n");
 		
+			
+		
+        
+
 		
 		try {
+			
 			
 	        ObjectMapper obj_ObjectMapper = new ObjectMapper();
 	        Json json = new Json();
 	        json = obj_ObjectMapper.readValue(element, Json.class);
+	        System.out.println("userId : " + json.getUserId() + " id : " + json.getId() + " title : " + json.getTitle() + " completed : " + json.isCompleted());
 	        
-	        System.out.println("statusCode-" + json.getStatusCode());
-	        System.out.println("statusMessage-" + json.getStatusMessage());
-	        System.out.println("ipAddress-" + json.getIpAddress());
-	        System.out.println("countryCode-" + json.getCountryCode());
-	        System.out.println("countryName-" + json.getCountryName());
-	        System.out.println("regionName-" + json.getRegionName());
-	        System.out.println("cityName-" + json.getCityName());
-	        System.out.println("zipCode-" + json.getZipCode());
-	        System.out.println("latitude-" + json.getLatitude());
-	        System.out.println("longitude-" + json.getLongitude());
-	        System.out.println("timeZone-" + json.getTimeZone());
-		}
-		catch(IOException e) {
+	      
+	       
+		} catch (IOException e1) {
 			
 		}
 	  
